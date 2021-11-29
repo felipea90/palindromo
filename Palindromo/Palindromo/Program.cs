@@ -13,12 +13,31 @@ namespace Palindromo
                 return new string(b);
             }
 
-            Console.WriteLine(ReverseString("Felipe"));
+            Console.WriteLine("Teste do Palindromo \n");
 
-            Console.WriteLine("Informe o nome");
-            string c = Console.ReadLine();
+            var check = false;
 
-            Console.WriteLine(ReverseString(c));
+            do
+            {
+                Console.WriteLine("Informe a palavra");
+                string c = Console.ReadLine();
+
+                var d = ReverseString(c);
+                Console.WriteLine(ReverseString($"\n{c}"));
+
+                if (c == d)
+                {
+                    Console.WriteLine("Parabéns. \nÉ um Palindromo.");
+                    check = true;
+                }
+                else
+                {
+                    Console.WriteLine("Não é um Palindromo. \nInforme uma nova palavra. \n");
+                }
+
+            }
+            while (check != true);
+
         }
     }
 }
